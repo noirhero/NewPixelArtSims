@@ -17,6 +17,7 @@ public class WallSystem : JobComponentSystem {
             .ForEach((Entity entity, int entityInQueryIndex, ref VelocityComponent velocity) => {
                 velocity.dir *= -1.0f;
                 cmdBuf.RemoveComponent<WallComponent>(entityInQueryIndex, entity);
+                cmdBuf.RemoveComponent<ReactiveComponent>(entityInQueryIndex, entity);
             })
             .Schedule(inputDependencies);
     }

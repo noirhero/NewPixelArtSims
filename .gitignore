@@ -58,3 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Unity Rider ignore files
+.idea
+
+# Unity user setting files
+UserSettings

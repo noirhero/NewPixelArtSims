@@ -25,7 +25,7 @@ public class EyesightSystem : JobComponentSystem {
         var searchEntitiesJobHandle = Entities
             .WithName("EyesightSystem_CollectSearcher")
             .WithStoreEntityQueryInField(ref _query)
-            .WithNone<EyesightComponent>()
+            .WithNone<EyesightComponent, ReactiveComponent>()
             .ForEach((Entity entity, int entityInQueryIndex, in VelocityComponent velocity, in PropertyComponent property, in Translation pos) => {
                 searchers[entityInQueryIndex] = new Searcher() {
                     entity = entity,

@@ -19,6 +19,10 @@ public class ThinkingSystem : JobComponentSystem {
                     return;
                 }
 
+                cmdBuf.AddComponent(entityInQueryIndex, entity, new ReactiveComponent() {
+                    target = eyesight.target
+                });
+
                 switch ((SomethingProxy.Type) eyesight.type) {
                     case SomethingProxy.Type.Wall:
                         cmdBuf.AddComponent(entityInQueryIndex, entity, new WallComponent());
@@ -26,8 +30,6 @@ public class ThinkingSystem : JobComponentSystem {
                     case SomethingProxy.Type.Item:
                         cmdBuf.AddComponent(entityInQueryIndex, entity, new ItemStorageComponent());
                         break;
-                    default:
-                        return;
                 }
 
                 cmdBuf.RemoveComponent<EyesightComponent>(entityInQueryIndex, entity);

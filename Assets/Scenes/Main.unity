@@ -250,8 +250,8 @@ MonoBehaviour:
   strength: 1
   agility: 1
   mentality: 1
-  intelligence: 1
-  search: 1
+  intelligence: 0.001
+  search: 0.5
   eyesight: 1
 --- !u!114 &160027310
 MonoBehaviour:
@@ -674,6 +674,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   thinkingTime: 1
+  gettingTime: 0
+  itemIndex: 0
 --- !u!114 &715432608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,6 +794,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   thinkingTime: 0
+  gettingTime: 0
+  itemIndex: 0
 --- !u!114 &1365157434
 MonoBehaviour:
   m_ObjectHideFlags: 0
