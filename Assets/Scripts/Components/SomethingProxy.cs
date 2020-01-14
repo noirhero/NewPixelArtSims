@@ -14,10 +14,6 @@ public class SomethingProxy : MonoBehaviour, IConvertGameObjectToEntity {
     public Type type = Type.None;
     public float thinkingTime = 0.0f;
 
-    [Header("Item Storage Properties")]
-    public float gettingTime = 0.0f;
-    public int itemIndex = 0;
-
     public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem) {
         if (Type.None == type) {
             dstManager.DestroyEntity(entity);
@@ -41,7 +37,7 @@ public class SomethingProxy : MonoBehaviour, IConvertGameObjectToEntity {
         });
         dstManager.AddComponentData(entity, new BoundComponent() {
             posX = transform.position.x + boxCollider.offset.x,
-            sizeX = boxCollider.size.x
+            sizeX = boxCollider.size.x * 0.5f
         });
     }
 }

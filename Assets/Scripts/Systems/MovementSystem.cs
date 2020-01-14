@@ -11,7 +11,7 @@ public class MovementSystem : JobComponentSystem {
 
         return Entities
             .WithName("MovementSystem_Stop")
-            .WithAll<EyesightComponent>()
+            .WithAny<EyesightComponent, HoldingComponent>()
             .ForEach((ref VelocityComponent velocity) => { velocity.value = 0.0f; })
             .Schedule(walkJobHandle);
     }

@@ -23,13 +23,8 @@ public class ThinkingSystem : JobComponentSystem {
                     target = eyesight.target
                 });
 
-                switch ((SomethingProxy.Type) eyesight.type) {
-                    case SomethingProxy.Type.Wall:
-                        cmdBuf.AddComponent(entityInQueryIndex, entity, new WallComponent());
-                        break;
-                    case SomethingProxy.Type.Item:
-                        cmdBuf.AddComponent(entityInQueryIndex, entity, new ItemStorageComponent());
-                        break;
+                if (SomethingProxy.Type.Wall == (SomethingProxy.Type) eyesight.type) {
+                    cmdBuf.AddComponent(entityInQueryIndex, entity, new WallComponent());
                 }
 
                 cmdBuf.RemoveComponent<EyesightComponent>(entityInQueryIndex, entity);
